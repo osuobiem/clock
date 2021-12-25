@@ -5,7 +5,8 @@ const minuteHand = document.getElementById('minute-hand');
 const hourHand = document.getElementById('hour-hand');
 
 const day = document.getElementById('day');
-day.innerText = date.getDate();
+newDate = date.getDate();
+day.innerText = newDate.toString().length > 1 ? newDate : `0${newDate}`;
 
 const seconds = document.getElementById('seconds');
 const minute = document.getElementById('minute');
@@ -59,14 +60,14 @@ setInterval(() => {
 
 
 // Rotate Hour Hand
-let hourHandAngle = date.getHours() * 14;
+let hourHandAngle = (date.getHours() * 30) + (minuteHandAngle/12) + (secondHandAngle/144);
 hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
 let hourCount = date.getHours();
 hour.innerText = hour.innerText = hourCount.toString().length > 1 ? hourCount : `0${hourCount}`;
 
 setInterval(() => {
-    hourHandAngle += secondHandAngle / (60 * 60 * 60);
+    hourHandAngle = (date.getHours() * 30) + (minuteHandAngle/12) + (secondHandAngle/144)
     hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
     if (minuteCount === 0) {
@@ -75,6 +76,7 @@ setInterval(() => {
     }
 
     if (hourCount === 0) {
-        day.innerText = (new Date()).getDate();
+        newDate = (new Date()).getDate();
+        day.innerText = newDate.toString().length > 1 ? newDate : `0${newDate}`;
     }
 }, 1000);
