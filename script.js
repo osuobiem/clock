@@ -69,14 +69,14 @@ setInterval(() => {
 
 
 // Rotate Hour Hand
-let hourHandAngle = (date.getHours() * 30) + (minuteHandAngle / 12) + (secondHandAngle / 144);
+let hourHandAngle = (date.getHours() * 30) + (minuteHandAngle / 12);
 hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
 let hourCount = date.getHours();
 hour.innerText = hour.innerText = hourCount.toString().length > 1 ? hourCount : `0${hourCount}`;
 
 setInterval(() => {
-    hourHandAngle = (date.getHours() * 30) + (minuteHandAngle / 12) + (secondHandAngle / 144);
+    hourHandAngle = (date.getHours() * 30) + (minuteHandAngle / 12);
     hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
     if (minuteCount === 0) {
