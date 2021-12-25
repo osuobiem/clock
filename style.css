@@ -74,6 +74,7 @@ body {
     width: 2px;
     background: black;
     box-shadow: inset 0px -6px 0px 0 #78909c;
+    border-radius: 12px;
 }
 
 .clock-number.long {
