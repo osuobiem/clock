@@ -52,7 +52,7 @@ setInterval(() => {
     minuteHand.setAttribute('style', `transform: rotate(${minuteHandAngle}deg)`);
 
     if (secondsCount === 0) {
-        minuteCount = (minuteCount === 59) ? 0 : minuteCount + 1;
+        minuteCount = (new Date()).getMinutes();
         minute.innerText = minuteCount.toString().length > 1 ? minuteCount : `0${minuteCount}`;
     }
 }, 1000);
@@ -70,7 +70,7 @@ setInterval(() => {
     hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
     if (minuteCount === 0) {
-        hourCount = (hourCount === 23) ? 0 : hourCount + 1;
+        hourCount = (new Date()).getHours();
         hour.innerText = hourCount.toString().length > 1 ? hourCount : `0${hourCount}`;
     }
 
