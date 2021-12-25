@@ -18,18 +18,6 @@ const clockNumbers = document.getElementById('clock-numbers');
 
 const longClassNumbers = [1, 4, 7, 10];
 
-
-// Play Tick sound
-document.addEventListener('click', () => {
-    tickSound.play();
-    tickSound.addEventListener('ended', function () {
-        this.currentTime = 5;
-        this.play();
-    }, false);
-});
-
-document.click
-
 // Generate clock numbers
 for (let i = 1; i <= 12; i++) {
     numberClass = longClassNumbers.includes(i) ? 'long' : 'short';
@@ -51,6 +39,8 @@ setInterval(() => {
 
     secondsCount = (secondsCount === 59) ? 0 : secondsCount + 1;
     seconds.innerText = secondsCount.toString().length > 1 ? secondsCount : `0${secondsCount}`;
+
+    tickSound.play();
 }, 1000);
 
 
