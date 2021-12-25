@@ -59,7 +59,7 @@ setInterval(() => {
 
 
 // Rotate Hour Hand
-let hourHandAngle = date.getHours() * 12;
+let hourHandAngle = date.getHours() * 14;
 hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
 let hourCount = date.getHours();
