@@ -12,10 +12,23 @@ const seconds = document.getElementById('seconds');
 const minute = document.getElementById('minute');
 const hour = document.getElementById('hour');
 
+const tickSound = document.getElementById('tick-sound');
+
 const clockNumbers = document.getElementById('clock-numbers');
 
 const longClassNumbers = [1, 4, 7, 10];
 
+
+// Play Tick sound
+document.addEventListener('click', () => {
+    tickSound.play();
+    tickSound.addEventListener('ended', function () {
+        this.currentTime = 5;
+        this.play();
+    }, false);
+});
+
+document.click
 
 // Generate clock numbers
 for (let i = 1; i <= 12; i++) {
@@ -60,14 +73,14 @@ setInterval(() => {
 
 
 // Rotate Hour Hand
-let hourHandAngle = (date.getHours() * 30) + (minuteHandAngle/12) + (secondHandAngle/144);
+let hourHandAngle = (date.getHours() * 30) + (minuteHandAngle / 12) + (secondHandAngle / 144);
 hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
 let hourCount = date.getHours();
 hour.innerText = hour.innerText = hourCount.toString().length > 1 ? hourCount : `0${hourCount}`;
 
 setInterval(() => {
-    hourHandAngle = (date.getHours() * 30) + (minuteHandAngle/12) + (secondHandAngle/144)
+    hourHandAngle = (date.getHours() * 30) + (minuteHandAngle / 12) + (secondHandAngle / 144);
     hourHand.setAttribute('style', `transform: rotate(${hourHandAngle}deg)`);
 
     if (minuteCount === 0) {
