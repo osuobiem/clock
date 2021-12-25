@@ -18,6 +18,12 @@ const clockNumbers = document.getElementById('clock-numbers');
 
 const longClassNumbers = [1, 4, 7, 10];
 
+let playSound = false;
+
+document.addEventListener('click', () => {
+    playSound = true;
+})
+
 // Generate clock numbers
 for (let i = 1; i <= 12; i++) {
     numberClass = longClassNumbers.includes(i) ? 'long' : 'short';
@@ -40,7 +46,7 @@ setInterval(() => {
     secondsCount = (secondsCount === 59) ? 0 : secondsCount + 1;
     seconds.innerText = secondsCount.toString().length > 1 ? secondsCount : `0${secondsCount}`;
 
-    tickSound.play();
+    playSound ? tickSound.play() : null;
 }, 1000);
 
 
