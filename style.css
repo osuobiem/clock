@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Orbitron:wght@500');
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#clock-container {
+    height: 100vh;
+    width: 100vw;
+    background: #607d8b;
+    overflow: hidden;
+    display: flex;
+}
+
+#clock, #clock-numbers {
+    height: 200px;
+    width: 200px;
+    background: #ffffff;
+    margin: auto;
+    border-radius: 100%;
+    position: relative;
+    box-shadow: 0 0 150px 10px #e3e3e3;
+    /* 0 0 15px 1px #e3e3e3 */
+}
+
+#clock-numbers {
+    background: transparent;
+}
+
+#clock::after {
+    content: '';
+    height: 9px;
+    width: 9px;
+    background: #ffc773;
+    position: absolute;
+    border-radius: inherit;
+    top: 97px;
+    left: 97px;
+    box-shadow: 0 0 2px 1px #000;
+}
+
+#minute-hand {
+    border-top: solid 85px #90a4ae;
+    border-bottom: solid 85px transparent;
+    width: 4.5px;
+    position: absolute;
+    left: 99.9px;
+    top: 17px;
+    border-radius: 100%;
+}
+
+#hour-hand {
+    border-top: solid 70px #54423c;
+    border-bottom: solid 70px transparent;
+    width: 4.5px;
+    position: absolute;
+    left: 99.9px;
+    top: 31px;
+    border-radius: 100%;
+}
+
+#second-hand {
+    border-top: solid 92px #e31868;
+    border-bottom: solid 92px transparent;
+    width: 1px;
+    position: absolute;
+    left: 101px;
+    top: 10px;
+}
+
+.clock-number {
+    position: absolute;
+    width: 2px;
+    background: black;
+    box-shadow: inset 0px -6px 0px 0 #78909c;
+}
+
+.clock-number.long {
+    height: 10%;
+}
+
+.clock-number.short {
+    height: 5%;
+}
+
+.clock-number:nth-child(1) {
+    left: 50%;
+}
+
+.clock-number:nth-child(2) {
+    top: 6.5%;
+    right: 24.5%;
+    transform: rotate(30deg);
+}
+
+.clock-number:nth-child(3) {
+    top: 24.5%;
+    right: 7.5%;
+    transform: rotate(60deg);
+}
+
+.clock-number:nth-child(4) {
+    top: 46%;
+    right: 4.5%;
+    transform: rotate(90deg);
+}
+
+.clock-number:nth-child(5) {
+    bottom: 23.275%;
+    right: 8%;
+    transform: rotate(120deg);
+}
+
+.clock-number:nth-child(6) {
+    bottom: 6%;
+    right: 25.5%;
+    transform: rotate(150deg);
+}
+
+.clock-number:nth-child(7) {
+    bottom: 0px;
+    right: 50%;
+    transform: rotate(180deg);
+}
+
+.clock-number:nth-child(8) {
+    bottom: 5.5%;
+    left: 26.5%;
+    transform: rotate(210deg);
+}
+
+.clock-number:nth-child(9) {
+    bottom: 22.5%;
+    left: 9%;
+    transform: rotate(240deg);
+}
+
+.clock-number:nth-child(10) {
+    top: 46%;
+    left: 4.5%;
+    transform: rotate(270deg);
+}
+
+.clock-number:nth-child(11) {
+    top: 24%;
+    left: 8.25%;
+    transform: rotate(300deg);
+}
+
+.clock-number:nth-child(12) {
+    top: 6.2%;
+    left: 26%;
+    transform: rotate(330deg);
+}
+
+#digital, #date {
+    position: absolute;
+    background: #cbcbcb;
+    top: 23%;
+    left: 23%;
+    padding: 1px;
+    border-radius: 2px;
+    border: solid 1px #e9e9e9;
+    box-shadow: inset 0 0 4px 0px #000;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+}
+
+#date {
+    top: 47%;
+    left: 77%;
+    font-size: 10px;
+    width: auto;
+    padding: 1px 4px;
+}
