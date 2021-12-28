@@ -52,6 +52,7 @@ body {
     left: 99.9px;
     top: 17px;
     border-radius: 100%;
+    transition: all 1s;
 }
 
 #hour-hand {
@@ -62,6 +63,7 @@ body {
     left: 99.9px;
     top: 31px;
     border-radius: 100%;
+    transition: all 1s;
 }
 
 #second-hand {
